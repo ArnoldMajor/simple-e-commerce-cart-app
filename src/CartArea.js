@@ -1,6 +1,6 @@
 import React from "react";
 
-function CartArea({ cart, clearCart }) {
+function CartArea({ cart, clearCart, removeItem }) {
     const cartItems = Object.values(cart);
     const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
@@ -16,6 +16,7 @@ function CartArea({ cart, clearCart }) {
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -25,11 +26,12 @@ function CartArea({ cart, clearCart }) {
                                     <td>${item.price}</td>
                                     <td>{item.quantity}</td>
                                     <td>${(item.price * item.quantity).toFixed(2)}</td>
+                                    <td><button className="button remove" onClick={removeItem.bind(null, item.name)}>x</button></td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-                </div>) : <p id="cart-message">Your cart is empty!</p>}
+                </div>) : <div className="message-area"><p id="cart-message">Your cart is empty!</p></div>}
             </div>
             <div className="checkout-area">
                 <p>Total: ${totalPrice.toFixed(2)}</p>

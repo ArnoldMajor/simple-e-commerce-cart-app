@@ -132,6 +132,10 @@ h2 {
   color: #fff;
 }
 
+.remove:hover {
+  background-color: crimson;
+}
+
 table {
   display: flex;
   flex-direction: column;
@@ -144,5 +148,17 @@ th {
 
 tr {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
+  margin-bottom: 5px;
+}
+
+.list-area {
+  min-height: 200px;
+}
+
+.message-area {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
 }

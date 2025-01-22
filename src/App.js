@@ -20,13 +20,18 @@ function App() {
     setCart({});
   }
 
+  function removeItem(id) {
+    const newCart = { ...cart };
+    delete newCart[id];
+    setCart(newCart);
+  }
 
   return (
     <div className="App">
       <h1>Enjoy a selection of our finest products!</h1>
       <div className='container'>
         <ProductList onAddToCart={handeAddToCart} />
-        <CartArea cart={cart} clearCart={handleClearCart} />
+        <CartArea cart={cart} clearCart={handleClearCart} removeItem={removeItem} />
       </div>
     </div>
   );
