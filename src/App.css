@@ -132,4 +132,17 @@ h2 {
   color: #fff;
 }
 
-.item-list {}
+table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+th {
+  margin-bottom: 20px;
+}
+
+tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
